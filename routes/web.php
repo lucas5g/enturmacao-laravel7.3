@@ -14,14 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['jwtApi'])->group(function () {
-    Route::view('/', 'home')->name('home');
-    Route::resource('users', 'UserController');
-    Route::resource('courses', 'CourseController');
-});
-Route::post('/login', 'AuthController@login');
+// Route::middleware(['jwtApi'])->group(function () {
+//     Route::view('/', 'home')->name('home');
+//     Route::resource('users', 'UserController');
+//     Route::resource('courses', 'CourseController');
+// });
+// Route::post('/login', 'AuthController@login');
 
 
-Route::get('/', function () {
-    return ['app' => 'Enturmacao'];
-});
+Route::view('{path}', 'app')->where('path', '[\/\w\.-]*');
