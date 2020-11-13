@@ -22,9 +22,23 @@
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-import Layout from './components/ExampleComponent'
 
+Vue.use(VueRouter);
+
+import Layout from './views/Layout';
+
+import Home from './views/Home';
+import UserList from './views/UserList';
+
+const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    { path: '/', component: Home},
+    { path: '/usuarios', component: UserList}
+  ]
+});
 
 
 /**
@@ -34,7 +48,8 @@ import Layout from './components/ExampleComponent'
  */
 
 const app = new Vue({
-    el: '#app',
-    components: { Layout }
+  el: '#app',
+  components: { Layout },
+  router
 
 });
