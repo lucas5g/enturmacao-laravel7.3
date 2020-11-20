@@ -22,4 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/login', 'AuthController@login');
 
 
-Route::view('{path}', 'app')->where('path', '[\/\w\.-]*');
+// Route::view('{path}', 'app')->where('path', '[\/\w\.-]*');
+Route::get('{path}', function(){
+    return ['msg'=> 'teste'];
+});

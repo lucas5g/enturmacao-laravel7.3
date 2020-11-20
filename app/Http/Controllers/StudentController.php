@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class StudentController extends Controller
 {
@@ -14,7 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+        
+        return $students;
     }
 
     /**
@@ -34,9 +37,12 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show(Request $request)
     {
-        //
+        $student = Student::where('registration', $request->student)->get();
+
+        return $student;
+        // return $student;
     }
 
     /**
@@ -49,6 +55,7 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
         //
+        return $student;
     }
 
     /**

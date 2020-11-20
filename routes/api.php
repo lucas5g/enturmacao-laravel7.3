@@ -16,10 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['jwtApi'])->group(function () {
     Route::view('/', 'home')->name('home');
-    Route::resource('users', 'UserController');
-    Route::resource('courses', 'CourseController');
+    // Route::resource('users', 'UserController');
+    // Route::resource('courses', 'CourseController');
 });
 Route::post('/login', 'AuthController@login');
+Route::resource('students', 'StudentController');
+// Route::get('students/{registration}', 'StudentController@show');
 
 
 Route::get('/', function () {

@@ -15,18 +15,20 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('vet_nov');
-            $table->string('tur_ant');
-            $table->string('sexo');
-            $table->string('turno');
-            $table->string('situacao');
-            $table->string('cidade');
-            $table->string('codtun');
-            $table->string('media');
-            $table->string('codcur');
-            $table->string('codper');
-            $table->string('escola_origem');            
+            $table->string('registration');
+            $table->string('name');
+            $table->string('veteran_noob');
+            $table->string('previous_class');
+            $table->string('genre');
+            $table->string('shift');
+            $table->string('situation');
+            $table->string('city');
+            $table->integer('shift_id');
+            $table->integer('average');
+            $table->integer('course_id');
+            $table->integer('period_id');
+            $table->string('origin_school');
+            $table->integer('year');            
             $table->timestamps();
         });
     }
