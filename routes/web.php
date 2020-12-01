@@ -23,6 +23,6 @@ use Illuminate\Support\Facades\Route;
 
 
 // Route::view('{path}', 'app')->where('path', '[\/\w\.-]*');
-Route::get('{path}', function(){
+Route::get('/', function(){
     return ['msg'=> 'teste'];
 });
