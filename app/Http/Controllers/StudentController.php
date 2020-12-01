@@ -13,10 +13,12 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public  function index()
+    public  function index(Request $request)
     {
         // $students = Student::all();
-        $students = Student::filter('CATARINA DE OLIVEIRA GAMA');
+        $filter = $request->query('filter');
+
+        $students = Student::filter($filter);
         // $students = new Student();
         // $services = $students->filter('CATARINA DE OLIVEIRA GAMA');
         
